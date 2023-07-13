@@ -2,10 +2,14 @@ class CreateComments < ActiveRecord::Migration[7.0]
   def change
     create_table :comments do |t|
       t.text :text
-      t.references :user, null: false, foreign_key: { to_table: 'users' }
+      t.references :author, null: false, foreign_key: { to_table: 'users' }
       t.references :post, null: false, foreign_key: true
 
       t.timestamps
     end
   end
 end
+
+# second_post = Post.create(author: first_user, title: 'Hello', text: 'This is my second post')
+# ActiveRecord::Base.connection.execute("SELECT * FROM Posts")
+# first_user = User.find(1)
