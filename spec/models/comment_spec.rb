@@ -13,7 +13,7 @@ RSpec.describe Comment, type: :model do
     op.post = nil
     expect(op).to_not be_valid
   end
-  
+
   it 'post should contain text' do
     op.text = nil
     expect(op).to_not be_valid
@@ -24,19 +24,15 @@ RSpec.describe Comment, type: :model do
     expect(op).to_not be_valid
   end
 
-
-
   it 'comment should belong to a post' do
     comment = Comment.reflect_on_association('post')
     expect(comment.macro).to eq(:belongs_to)
   end
-  
+
   it 'comment should have an author' do
     comment = Comment.reflect_on_association('author')
     expect(comment.macro).to eq(:belongs_to)
   end
-
-
 
   it 'comment counter gets correctly updated' do
     first_user = User.create(

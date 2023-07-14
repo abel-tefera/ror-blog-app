@@ -22,8 +22,6 @@ RSpec.describe Post, type: :model do
     expect(op).to_not be_valid
   end
 
-
-
   it 'post cannot have negative likes count' do
     op.likes_counter = -4
     expect(op).to_not be_valid

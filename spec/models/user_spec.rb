@@ -14,5 +14,4 @@ RSpec.describe User, type: :model do
     op.posts_counter = -1
     expect(op).to_not be_valid
   end
-
 end
