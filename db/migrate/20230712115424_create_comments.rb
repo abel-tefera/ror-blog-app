@@ -9,7 +9,3 @@ class CreateComments < ActiveRecord::Migration[7.0]
     end
   end
 end
-
-# second_post = Post.create(author: first_user, title: 'Hello', text: 'This is my second post')
-# ActiveRecord::Base.connection.execute("SELECT * FROM Posts")
-# first_user = User.find(1)

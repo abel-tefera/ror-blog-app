@@ -4,12 +4,12 @@ one:
   author_id: 1
   title: MyString
   text: MyText
-  comment_counter: 1
+  comments_counter: 1
   likes_counter: 1
 
 two:
   author_id: 1
   title: MyString
   text: MyText
-  comment_counter: 1
+  comments_counter: 1
   likes_counter: 1
