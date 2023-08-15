@@ -6,9 +6,9 @@ class Comment < ApplicationRecord
 
   after_save :update_comments_counter
 
+  private
+
   def update_comments_counter
-    post = Post.find_by_id(post_id)
-    post.comments_counter = post.comments_counter.to_i + 1
-    post.save
+    post.increment!(:comments_counter)
   end
 end

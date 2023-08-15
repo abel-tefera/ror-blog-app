@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   has_many :comments, foreign_key: :post_id
 
   before_save :update_post_counter
-  # scope :get_5_comments, ->(post) { post.comments.order('created_at DESC').limit(5) }
 
   validates :title, presence: true
   validates :title, length: { in: 1..250 }
