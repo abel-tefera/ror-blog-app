@@ -3,7 +3,9 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: :post_id
   has_many :comments, foreign_key: :post_id
 
-  before_save :update_post_counter
+  after_save :update_post_counter
+
+  private
 
   validates :title, presence: true
   validates :title, length: { in: 1..250 }
