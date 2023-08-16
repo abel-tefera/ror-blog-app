@@ -3,7 +3,9 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: :post_id
   has_many :comments, foreign_key: :post_id
 
-  before_save :update_post_counter
+  after_save :update_post_counter
+
+  private
 
   def update_post_counter
     op = User.find_by_id(author.id)
