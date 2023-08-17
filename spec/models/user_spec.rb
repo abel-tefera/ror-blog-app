@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject do 
+  subject do
     user = User.create(name: 'John Wick', photo: 'someurl.com', bio: 'The BabaYaga', posts_counter: 0)
-    3.times do 
+    3.times do
       Post.create(
         title: 'Random',
         text: 'Random',
