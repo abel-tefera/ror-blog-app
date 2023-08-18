@@ -3,13 +3,6 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
     user = User.create(name: 'John Wick', photo: 'someurl.com', bio: 'The BabaYaga', posts_counter: 0)
-    3.times do
-      Post.create(
-        title: 'Random',
-        text: 'Random',
-        author: user
-      )
-    end
     user
   end
 
@@ -30,6 +23,32 @@ RSpec.describe User, type: :model do
   end
 
   it 'can fetch a users three recent posts' do
-    expect(subject.three_recent_posts.length).to eq 0
+    3.times do
+      Post.create(
+        title: 'Random',
+        text: 'Random',
+        author: subject
+      )
+    end
+    user = User.find_by_id(subject.id)
+    expect(user.three_recent_posts.length).to eq 3
+  end
+
+  describe '#recent_three_posts method' do
+    let(:user) { create(:user) }
+
+    it 'it returns the last 3 posts of a user' do
+      user = User.create(name: 'Harriet', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+
+      first_post = Post.create(author: user, title: 'Hello', text: 'This is my first post')
+      second_post = Post.create(author: user, title: 'Happy', text: 'This is my second post')
+      third_post = Post.create(author: user, title: 'Sad', text: 'This is my third post')
+      fourth_post = Post.create(author: user, title: 'Joy', text: 'This is my fourth post')
+
+      recent_posts = user.three_recent_posts
+
+      expect(recent_posts).to_not include(first_post)
+      expect(recent_posts).to include(fourth_post, third_post, second_post)
+    end
   end
 end

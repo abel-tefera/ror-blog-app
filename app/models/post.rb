@@ -11,15 +11,15 @@ class Post < ApplicationRecord
 
   after_save :update_post_counter
 
+  def find_5_comments
+    comments.order('created_at desc').limit(5)
+  end
+
   private
 
   def update_post_counter
     op = User.find_by_id(author.id)
     op.posts_counter = op.posts_counter.to_i + 1
     op.save
-  end
-
-  def find_5_comments
-    comments.order('created_at desc').limit(5)
   end
 end
