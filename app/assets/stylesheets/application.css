@@ -13,3 +13,76 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.border_solid {
+  border: solid 1px black;
+}
+
+.img_container {
+  height: 100px;
+  width: 100px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 80px;
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.label {
+  align-self: center;
+}
+
+.count_post {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.user_all_posts {
+  align-self: center;
+  width: max-content;
+}
+
+.comments_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.likes_box {
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding-right: 1rem;
+}
+
+.btn_pag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info_post {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show_posts {
+  margin: 2rem 4rem;
+}
