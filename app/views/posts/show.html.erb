@@ -10,11 +10,14 @@
 </p>
 </div>
 <br />
-<div class="border_solid">
-    <% @post.comments.each do |comment| %>
-     <p><%= comment.author.name%>: <%= comment.text %></p>
-    <%end%>
+<%= render 'likes/form'%>
+<br />
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<br />
 
+<div class="border_solid">
+    <%= render @post.comments %>
 </div>
 
 </div>
