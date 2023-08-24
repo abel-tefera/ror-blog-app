@@ -10,7 +10,9 @@
     </div>
 <% @user.three_recent_posts.each do |post| %>
     <div class="border_solid" >
-        <h1>post <%= post.title %></h1>
+        <a href="/users/<%= post.author_id%>/posts/<%= post.id %>">
+            <h1><%= post.title %></h1>
+        </a>
         <p>
         <%= post.text %>
         </p>
