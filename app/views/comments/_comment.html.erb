@@ -1,0 +1,10 @@
+  <% unless comment.text.nil? %>
+    <p>
+      <strong>Commenter:</strong>
+      <%= comment.author.name %>
+      <br />
+
+      <strong>Comment:</strong>
+      <%= comment.text %>
+    </p>
+  <% end %>
