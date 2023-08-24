@@ -1,3 +1,4 @@
 <% @users.each do |user| %>
 <%= render 'shared/user_profile', user: user %>
 <% end %>
+<%= link_to "New Post", new_user_post_path(ApplicationController.current_user) %>
