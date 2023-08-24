@@ -1,1 +1,25 @@
-<h1>Showing user</h1>
+<%= render 'shared/user_profile', user: @user %>
+
+<div class="details">
+
+    <div class="border_solid">
+        <h1>Bio</h1>
+        <p>
+        <%= @user.bio %>
+        </p>
+    </div>
+<% @user.three_recent_posts.each do |post| %>
+    <div class="border_solid" >
+        <a href="/users/<%= post.author_id%>/posts/<%= post.id %>">
+            <h1><%= post.title %></h1>
+        </a>
+        <p>
+        <%= post.text %>
+        </p>
+        <p class="likes_box">Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
+    </div>
+<%end%>
+
+
+<a href="/users/<%= @user.id%>/posts" class="user_all_posts">See all Posts</a>
+</div>

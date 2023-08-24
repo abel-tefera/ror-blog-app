@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="border_solid img_container">
+    <%= image_tag(user.photo, :alt => "Profile pic", :class => "img_container")  %> 
+    </div>
+         <div class=" border_solid card" >
+           <a href="/users/<%= user.id%>"> <h2 class="label"> <%= user.name %></h2></a>
+
+            <p class="count_post">Number of posts: <%= user.posts_counter%> </p>
+         </div>
+ 
+</div>
