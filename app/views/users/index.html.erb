@@ -1,4 +1,10 @@
+<div class="main">
+    <div class="index_container">
 <% @users.each do |user| %>
 <%= render 'shared/user_profile', user: user %>
 <% end %>
-<%= link_to "New Post", new_user_post_path(ApplicationController.current_user) %>
+<div class="new_post_container">
+<%= link_to "New Post", new_user_post_path(ApplicationController.current_user), {class: 'btn new_post border_solid'} %>
+</div>
+</div>
+</div>

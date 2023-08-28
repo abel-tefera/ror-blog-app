@@ -14,7 +14,43 @@
  *= require_self
  */
 
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Balsamiq Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f6f6f6;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  margin: 1rem;
+}
+
+.index_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.bio {
+  margin-bottom: 1rem
+}
+
+.home_container {
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.profile_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,37 +59,39 @@
 }
 
 .border_solid {
-  border: solid 1px black;
+  border: solid 2px black;
 }
 
 .img_container {
-  height: 100px;
-  width: 100px;
+  height: 5.625rem;
+  width: 5.625rem;
 }
 
-.card {
+.info_card {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  height: 80px;
+  flex-direction: column;
+  height: 5rem;
   width: 50%;
   padding: 0.5rem;
 }
 
-.label {
+.name_label {
   align-self: center;
+  margin: 0.25rem;
+  width: fit-content;
 }
 
 .count_post {
   align-self: flex-end;
-  justify-self: flex-end;
+  margin: 0.25rem;
 }
 
 .details {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
+  align-items: center;
 }
 
 .user_all_posts {
@@ -67,9 +105,13 @@
 }
 
 .likes_box {
-  align-self: flex-end;
-  justify-self: flex-end;
+  display: flex;
+  place-content: flex-end;
   padding-right: 1rem;
+}
+
+.post_text {
+  font-size: larger;
 }
 
 .btn_pag {
@@ -85,4 +127,40 @@
 
 .show_posts {
   margin: 2rem 4rem;
+}
+
+.btn {
+  height: max-content;
+  font-size: 0.8em;
+  align-self: center;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.705);
+  background: white;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 0.2px;
+  color: black;
+  padding: 0.25rem 0.5rem;
+}
+
+.new_post {
+  align-self: end;
+  text-decoration: none;
+}
+
+.new_post_container {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: end;
+}
+
+@media only screen and (width >=768px) {
+  .index_container {
+    width: 70%;
+  }
+
+  .home_container {
+    width: 65%
+  }
 }

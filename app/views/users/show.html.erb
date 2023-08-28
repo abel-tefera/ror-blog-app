@@ -2,21 +2,21 @@
 
 <div class="details">
 
-    <div class="border_solid">
+    <div class="border_solid home_container bio">
         <h1>Bio</h1>
         <p>
         <%= @user.bio %>
         </p>
     </div>
 <% @user.three_recent_posts.each do |post| %>
-    <div class="border_solid" >
+    <div class="border_solid home_container" >
         <a href="/users/<%= post.author_id%>/posts/<%= post.id %>">
             <h1><%= post.title %></h1>
         </a>
-        <p>
+        <p class="post_text">
         <%= post.text %>
         </p>
-        <p class="likes_box">Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
+        <div class="likes_box"><p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p></div>
     </div>
 <%end%>
 
