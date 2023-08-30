@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Post show page', type: :feature do
   user = User.create(name: 'Abel', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
   post = Post.create(author_id: user.id, title: 'Hello', text: 'This is my first post')
-  comment = Comment.create(user_id: user.id, post_id: post.id, text: 'text')
+  comment = Comment.create(author_id: user.id, post_id: post.id, text: 'text')
 
   before :each do
     visit user_post_path(user, post)

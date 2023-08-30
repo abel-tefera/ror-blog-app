@@ -5,8 +5,8 @@ RSpec.describe 'Post index page', type: :feature do
   commenter = User.create(name: 'Salamon', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Ghana.')
   first_post = Post.create(author_id: user.id, title: 'Hello', text: 'This is my first post')
 
-  Comment.create(user_id: commenter.id, post_id: first_post.id, text: 'comment')
-  Comment.create(user_id: commenter.id, post_id: first_post.id, text: 'another comment')
+  Comment.create(author_id: commenter.id, post_id: first_post.id, text: 'comment')
+  Comment.create(author_id: commenter.id, post_id: first_post.id, text: 'another comment')
 
   before :each do
     visit user_posts_path(user)
