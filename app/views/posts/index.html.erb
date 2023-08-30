@@ -11,7 +11,7 @@
         </p>
 </div>
 <div class="border_solid">
-<% post.find_5_comments.each  do |comment|%>
+<% post.find_5_comments.includes([:author]).each  do |comment|%>
     <p><%= comment.author.name %> - <%= comment.text %></p>
     <%end%>
 </div>
