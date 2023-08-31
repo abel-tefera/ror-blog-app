@@ -1,5 +1,19 @@
-require 'test_helper'
+require 'selenium/webdriver'
 
-class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
+Capybara.default_max_wait_time = 5
+
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: { args: %w[headless disable-gpu window-size=1280,2000 no-sandbox] }
+  )
+
+  Capybara::Selenium::Driver.new app,
+                                 browser: :chrome,
+                                 desired_capabilities: capabilities
+end
+
+Capybara.javascript_driver = :headless_chrome

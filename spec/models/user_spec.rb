@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
     expect(user.three_recent_posts.length).to eq 3
   end
 
-  describe '#recent_three_posts method' do
+  describe '#three_recent_posts method' do
     let(:user) { create(:user) }
 
     it 'it returns the last 3 posts of a user' do

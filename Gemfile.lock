@@ -199,7 +199,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.56.1)
+    rubocop (1.56.2)
       base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -281,4 +281,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.16
+   2.4.19
