@@ -179,11 +179,13 @@ body {
   justify-content: end;
 }
 
-.field input[type = "email"], input[type = "text"], input[type = "password"]  {
+.field input[type="email"],
+input[type="text"],
+input[type="password"] {
   width: 100%
 }
 
-@media only screen and (width >= 768px) {
+@media only screen and (width >=768px) {
   .index_container {
     width: 70%;
   }
