@@ -5,7 +5,7 @@ RSpec.describe 'User show page', type: :feature do
   first_post = Post.create(author_id: user.id, title: 'Hello', text: 'This is my first post')
   Post.create(author_id: user.id, title: 'Hello', text: 'This is my second post')
   Post.create(author_id: user.id, title: 'Hello', text: 'This is my third post')
-  post = Post.create(author_id: user.id, title: 'Hello', text: 'This is my fourth post')
+  next_post = Post.create(author_id: user.id, title: 'Hello', text: 'This is my fourth post')
 
   before :each do
     visit user_path(user)
@@ -40,8 +40,8 @@ RSpec.describe 'User show page', type: :feature do
 
   describe 'interactions on page' do
     it "redirects to post's show page when post is clicked" do
-      click_link(href: user_post_path(user, post))
-      expect(page).to have_current_path(user_post_path(user, post))
+      click_link(href: user_post_path(user, next_post))
+      expect(page).to have_current_path(user_post_path(user, next_post))
     end
 
     it "redirects to post's index page when 'See all Posts' clicked" do
