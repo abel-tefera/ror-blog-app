@@ -95,6 +95,12 @@ rspec spec
 - Twitter: [@twitter](https://twitter.com/abelteferabelay)
 - LinkedIn: [@linkedin](https://www.linkedin.com/in/abel-t-belay/)
 
+### 👤 **Tshobohwa**
+
+- GitHub: [@githubhandle](https://github.com/Tshobohwa)
+- Twitter: [@twitterhandle](https://twitter.com/SalomonTshoboh1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tshobohwasalomon/)
+
 # 🔭 Future Features:
 
 - Processing data in models

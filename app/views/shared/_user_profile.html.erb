@@ -7,5 +7,6 @@
             <a href="/users/<%= user.id%>"> <h2 class="name_label"> <%= user.name %></h2></a>
             <p class="count_post">Number of posts: <%= user.posts_counter%> </p>
          </div>
- 
+ <%= link_to 'Edit profile', edit_user_registration_path %>
+
 </div>

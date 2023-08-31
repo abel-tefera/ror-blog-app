@@ -4,7 +4,7 @@
 <%= render 'shared/user_profile', user: user %>
 <% end %>
 <div class="new_post_container">
-<%= link_to "New Post", new_user_post_path(ApplicationController.current_user), {class: 'btn new_post border_solid'} %>
+<%= link_to "New Post", new_user_post_path(current_user), {class: 'btn new_post border_solid'} %>
 </div>
 </div>
 </div>
