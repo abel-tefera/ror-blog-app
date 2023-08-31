@@ -31,11 +31,11 @@ RSpec.describe 'Post show page', type: :feature do
     end
 
     it 'should see username of each commentor' do
-      expect(page).to have_content("#{comment.author.name}: #{comment.text}")
+      expect(page).to have_content("Commenter: #{comment.author.name}\nComment: #{comment.text}")
     end
 
     it 'should see the comment' do
-      expect(page).to have_content("#{comment.author.name}: #{comment.text}")
+      expect(page).to have_content("Commenter: #{comment.author.name}\nComment: #{comment.text}")
     end
   end
 end

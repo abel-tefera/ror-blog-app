@@ -40,7 +40,7 @@ RSpec.describe 'Post index page', type: :feature do
       user.posts.each do |post|
         last_5_comments = post.find_5_comments
         last_5_comments.each do |comment|
-          expect(page).to have_content("#{comment.author.name}: #{comment.text}")
+          expect(page).to have_content("#{comment.author.name} - #{comment.text}")
         end
       end
     end
