@@ -13,11 +13,12 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'api/authentication#login'
 
   namespace :api do
-    namespace :v1 do
-      get '/users/:user_id/posts', to: 'posts#index'
-      get '/users/:user_id/posts/:post_id/comments', to: 'comments#index'
-      post '/users/:user_id/posts/:post_id/comments', to: 'comments#create'
+      namespace :v1 do
+        resources :users do
+          resources :posts, only: [:index] do
+            resources :comments, only: [:index, :create]
+        end
+      end
     end
   end
-
 end
