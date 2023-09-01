@@ -39,7 +39,7 @@ body {
 }
 
 .alert {
-  color: red
+  color: red;
 }
 
 .notice {
@@ -89,7 +89,7 @@ body {
 }
 
 .posts_container {
-  margin: 1rem
+  margin: 1rem;
 }
 
 .post_text {
@@ -171,14 +171,14 @@ body {
 }
 
 .comments_box {
-  padding: 1rem
+  padding: 1rem;
 }
 
 .btn_pag {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
 }
 
 .info_post {
@@ -245,7 +245,7 @@ input[type="password"] {
   width: 100%;
 }
 
-@media only screen and (width >=768px) {
+@media only screen and (width >= 768px) {
   .index_container {
     width: 70%;
   }
