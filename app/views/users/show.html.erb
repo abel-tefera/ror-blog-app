@@ -1,25 +1,26 @@
-<%= render 'shared/user_profile', user: @user %>
+<%= render "shared/user_profile", user: @user %>
 
 <div class="details">
 
-    <div class="border_solid home_container bio">
-        <h1>Bio</h1>
-        <p>
-        <%= @user.bio %>
-        </p>
-    </div>
-<% @user.three_recent_posts.each do |post| %>
-    <div class="border_solid home_container" >
-        <a href="/users/<%= post.author_id%>/posts/<%= post.id %>">
-            <h1><%= post.title %></h1>
-        </a>
-        <p class="post_text">
+  <div class="border_solid home_container bio">
+    <h1>Bio</h1>
+    <p>
+      <%= @user.bio %>
+    </p>
+  </div>
+  <% @user.three_recent_posts.each do |post| %>
+    <div class="border_solid home_container">
+      <a href="/users/<%= post.author_id%>/posts/<%= post.id %>">
+        <h1><%= post.title %></h1>
+      </a>
+      <p class="post_text">
         <%= post.text %>
-        </p>
-        <div class="likes_box"><p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p></div>
+      </p>
+      <div class="likes_box"><p>Comments:
+          <%= post.comments_counter %>, Likes:
+          <%= post.likes_counter %></p></div>
     </div>
-<%end%>
+  <% end %>
 
-
-<a href="/users/<%= @user.id%>/posts" class="user_all_posts">See all Posts</a>
+  <a href="/users/<%= @user.id%>/posts" class="user_all_posts">See all Posts</a>
 </div>

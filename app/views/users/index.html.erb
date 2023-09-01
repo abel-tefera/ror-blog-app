@@ -1,11 +1,11 @@
 <div class="main">
-    <%= render 'shared/navbar'%>
-    <div class="index_container">
-<% @users.each do |user| %>
-<%= render 'shared/user_profile', user: user %>
-<% end %>
-<div class="new_post_container">
-<%= link_to "New Post", new_user_post_path(current_user), {class: 'new_post'} %>
-</div>
-</div>
+  <%= render "shared/navbar" %>
+  <div class="index_container">
+    <% @users.each do |user| %>
+      <%= render "shared/user_profile", user: user %>
+    <% end %>
+    <div class="new_post_container">
+      <%= link_to "New Post", new_user_post_path(current_user), { class: "new_post" } %>
+    </div>
+  </div>
 </div>
