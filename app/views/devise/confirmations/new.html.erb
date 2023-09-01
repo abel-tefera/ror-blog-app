@@ -1,4 +1,4 @@
-<div class="register_container">
+<div class="center_container">
 
   <h2>Resend confirmation instructions</h2>
 
@@ -8,8 +8,18 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <%= f.label :email %><br/>
+        <%= f.email_field :email,
+                      autofocus: true,
+                      autocomplete: "email",
+                      value:
+                        (
+                          if resource.pending_reconfirmation?
+                            resource.unconfirmed_email
+                          else
+                            resource.email
+                          end
+                        ) %>
       </div>
 
       <div class="actions">

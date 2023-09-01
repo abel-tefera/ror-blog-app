@@ -1,0 +1,9 @@
+<div class="nav">
+  <%= button_to("Home", root_path, method: :get, class: "nav-btn") %>
+  <%= button_to(
+    "Log Out",
+    destroy_user_session_path,
+    method: :delete,
+    class: "nav-btn"
+  ) %>
+</div>

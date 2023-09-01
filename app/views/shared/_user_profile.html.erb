@@ -1,12 +1,19 @@
 <div class="profile_container">
-    <div class="border_solid img_container">
-      <img src="<%= user.photo %>" alt="<%= user.name %>" width="150" height="150" />
-
+  <div class="border_solid img_container">
+    <img src="<%= user.photo %>" alt="<%= user.name %>" width="150" height="150"/>
+  </div>
+  <div class="border_solid info_card">
+    <div class="profile_info">
+      <a href="/users/<%= user.id%>">
+        <h2 class="name_label">
+          <%= user.name %></h2></a>
+      <% if can? :edit, user %>
+        <%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
+      <% end %>
     </div>
-         <div class=" border_solid info_card" >
-            <a href="/users/<%= user.id%>"> <h2 class="name_label"> <%= user.name %></h2></a>
-            <p class="count_post">Number of posts: <%= user.posts_counter%> </p>
-         </div>
- <%= link_to 'Edit profile', edit_user_registration_path %>
+    <p class="count_post">Number of posts:
+      <%= user.posts_counter %>
+    </p>
+  </div>
 
 </div>

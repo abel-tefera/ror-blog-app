@@ -1,9 +1,8 @@
 <%= form_with model: [ @post, @post.comments.build ], url: user_post_comments_path(post_id: @post.id) do |form| %>
   <p>
     <%= form.label :text, required: true %><br>
-    <%= form.text_area :text, required: true %>
+    <%= form.text_area :text, autofocus: true, required: true, rows: 5, cols: 25 %>
   </p>
-
   <p>
     <%= form.submit "Comment" %>
   </p>
