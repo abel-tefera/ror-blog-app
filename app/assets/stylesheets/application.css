@@ -34,6 +34,18 @@ body {
   margin: 1rem;
 }
 
+.message {
+  text-align: center;
+}
+
+.alert {
+  color: red
+}
+
+.notice {
+  color: darkslategray
+}
+
 .index_container {
   width: 100%;
   display: flex;
@@ -149,7 +161,23 @@ body {
   margin: 2rem 4rem;
 }
 
-.btn {
+.links {
+  padding: 0.125rem 0 0.125rem 0;
+}
+
+.new_post {
+  align-self: end;
+}
+
+.new_post_container {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: end;
+}
+
+button, input[type="submit"] {
   height: max-content;
   font-size: 0.8em;
   align-self: center;
@@ -160,23 +188,8 @@ body {
   letter-spacing: 0.2px;
   color: black;
   padding: 0.25rem 0.5rem;
-}
-
-.links {
-  padding: 0.125rem 0 0.125rem 0;
-}
-
-.new_post {
-  align-self: end;
   text-decoration: none;
-}
-
-.new_post_container {
-  width: 65%;
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-  justify-content: end;
+  border: solid 2px black;
 }
 
 .field input[type="email"],

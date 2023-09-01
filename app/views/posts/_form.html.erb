@@ -1,7 +1,7 @@
 <%= form_with model: [post], url: user_posts_path(@user) do |form| %>
   <div>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, autofocus: true, required: true %>
     <% post.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -9,7 +9,7 @@
 
   <div>
     <%= form.label :text %><br>
-    <%= form.text_area :text %><br>
+    <%= form.text_area :text, required: true %><br>
     <% post.errors.full_messages_for(:text).each do |message| %>
       <div><%= message %></div>
     <% end %>
