@@ -1,41 +1,40 @@
-<%= button_to("Log Out", destroy_user_session_path, method: :delete) %>
-<%= button_to("Home", root_path, method: :get) %>
-<%= render "shared/user_profile", user: @user %>
-<%= link_to "Add a Post...", new_user_post_path(@user) %>
+<%= render "shared/navbar" %>
 
-<% @posts.each do |post| %>
-  <div class="border_solid comments_box">
-    <a href="/users/<%= post.author_id%>/posts/<%= post.id %>"><%= post.title %></a>
-    <p>
-      <%= post.text %>
-    </p>
-    <p class="likes_box">
-      Comments:
-      <%= post.comments_counter %>
-      Likes:
-      <%= post.likes_counter %>
-    </p>
-    <% if can? :destroy, post %>
-      <%= form_for [@user, post], url: user_post_path(@user, post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do |f| %>
-        <%= f.submit "Delete Post" %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="border_solid">
-    <% post.find_5_comments.includes([:author]).each  do |comment| %>
-      <p><%= comment.author.name %>
-        -
-        <%= comment.text %></p>
-      <% if can? :destroy, comment %>
-        <%= form_for [@user, post, comment], url: user_post_comment_path(post.author, post, comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } do |f| %>
-          <%= f.submit "Delete Comment" %>
+<%= render "shared/user_profile", user: @user %>
+<div class="posts_container">
+  <% @posts.each do |post| %>
+    <div class="border_solid comments_box">
+      <a href="/users/<%= post.author_id%>/posts/<%= post.id %>"><h2><%= post.title %></h2></a>
+      <p class="post_text">
+        <%= post.text %>
+      </p>
+      <p class="likes_box">
+        Comments:
+        <%= post.comments_counter %>
+        Likes:
+        <%= post.likes_counter %>
+      </p>
+      <% if can? :destroy, post %>
+        <%= form_for [@user, post], url: user_post_path(@user, post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do |f| %>
+          <%= f.submit "Delete Post" %>
         <% end %>
       <% end %>
-
+    </div>
+    <% post.find_5_comments.includes([:author]).each  do |comment| %>
+      <div class="border_solid comments_for_posts">
+        <p><%= comment.author.name %>
+          -
+          <%= comment.text %></p>
+        <% if can? :destroy, comment %>
+          <%= form_for [@user, post, comment], url: user_post_comment_path(post.author, post, comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } do |f| %>
+            <%= f.submit "Delete Comment" %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
-  </div>
-  <br/>
-<% end %>
+    <br/>
+  <% end %>
+</div>
 <div class="btn_pag">
   <button class="user_all_posts">Pagination</button>
 </div>

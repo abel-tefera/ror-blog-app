@@ -1,5 +1,5 @@
 <%= form_with model: [post], url: user_posts_path(@user) do |form| %>
-  <div>
+  <div class="field">
     <%= form.label :title %><br>
     <%= form.text_field :title, autofocus: true, required: true %>
     <% post.errors.full_messages_for(:title).each do |message| %>
@@ -7,15 +7,15 @@
     <% end %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :text %><br>
-    <%= form.text_area :text, required: true %><br>
+    <%= form.text_area :text, required: true , rows: 10, cols: 30 %><br>
     <% post.errors.full_messages_for(:text).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

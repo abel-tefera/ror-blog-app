@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   align-content: center;
   width: 100%;
-  margin: 1rem;
+  padding: 1rem;
 }
 
 .message {
@@ -43,7 +43,17 @@ body {
 }
 
 .notice {
-  color: darkslategray
+  color: green;
+}
+
+.nav {
+  display: flex;
+  justify-content: end;
+  margin-right: 2.25rem;
+}
+
+.nav-btn {
+  margin: 0 0.25rem 0 0.25rem;
 }
 
 .index_container {
@@ -70,12 +80,20 @@ body {
   padding: 1rem;
 }
 
-.register_container {
+.center_container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
+}
+
+.posts_container {
+  margin: 1rem
+}
+
+.post_text {
+  margin: 0;
 }
 
 .field {
@@ -136,25 +154,41 @@ body {
   flex-direction: column;
 }
 
+.comments_for_posts {
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
 .likes_box {
   display: flex;
   place-content: flex-end;
   padding-right: 1rem;
+  margin: 0;
 }
 
 .post_text {
   font-size: larger;
 }
 
+.comments_box {
+  padding: 1rem
+}
+
 .btn_pag {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem
 }
 
 .info_post {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.info_comment {
+  padding-left: 1rem;
 }
 
 .show_posts {
@@ -163,6 +197,10 @@ body {
 
 .links {
   padding: 0.125rem 0 0.125rem 0;
+}
+
+.margin {
+  margin: 1rem 0 1rem 0;
 }
 
 .new_post {
@@ -177,7 +215,16 @@ body {
   justify-content: end;
 }
 
-button, input[type="submit"] {
+.profile_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn,
+button,
+input[type="submit"] {
   height: max-content;
   font-size: 0.8em;
   align-self: center;
@@ -198,7 +245,7 @@ input[type="password"] {
   width: 100%;
 }
 
-@media only screen and (width >= 768px) {
+@media only screen and (width >=768px) {
   .index_container {
     width: 70%;
   }

@@ -1,23 +1,26 @@
+<%= render "shared/navbar" %>
 <div class="show_posts">
-<div class="border_solid">
-<div class="info_post">
-<p><%= @post.title%> by <%= @post.author.name%></P>
-<p>Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter %></p>
-</div>
+  <div class="border_solid">
+    <div class="info_post">
+      <h2><%= @post.title %>
+        by
+        <%= @post.author.name %></h2>
+      <p>Comments:
+        <%= @post.comments_counter %>
+        Likes:
+        <%= @post.likes_counter %></p>
+    </div>
+    <h4 class="info_comment">
+      <%= @post.text %>
+    </h4>
+  </div>
+  <br/>
+  <%= render "likes/form" %>
+  <br/>
+  <h2>Add a comment:</h2>
+  <%= render "comments/form" %>
+  <br/>
 
-<p>
-<%= @post.text%>
-</p>
-</div>
-<br />
-<%= render 'likes/form'%>
-<br />
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-<br />
-
-<div class="border_solid">
-    <%= render @post.comments %>
-</div>
+  <%= render @post.comments %>
 
 </div>
