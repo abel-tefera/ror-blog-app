@@ -14,6 +14,7 @@ class Ability
     else
       can :destroy, Comment, author: user
       can :destroy, Post, author: user
+      can :edit, User, id: user.id 
     end
   end
 end
