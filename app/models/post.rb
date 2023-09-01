@@ -10,6 +10,7 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
   after_save :update_post_counter
+  before_destroy -> { User.find_by(id: author.id).decrement!(:posts_counter) }
 
   def find_5_comments
     comments.order('created_at desc').limit(5)
