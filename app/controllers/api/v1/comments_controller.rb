@@ -1,14 +1,10 @@
 class Api::V1::CommentsController < ApplicationController
-  protect_from_forgery with: :null_session
+  before_action :authorize_request, only: :create
+  # protect_from_forgery with: :null_session
 
   def index
     @comments = Comment.where(post_id: params[:post_id])
-
-    if @comments
-      render json: { status: 'Success', data: @comments }
-    else
-      render json: { status: 'Error', data: @comments.errors }
-    end
+    render json: @comments.to_json, status: :ok
   end
 
   def create

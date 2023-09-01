@@ -1,14 +1,17 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+class ApplicationController < ActionController::API
+  def not_found
+    render json: { error: 'not_found' }
+  end
 
-  before_action :update_allowed_parameters, if: :devise_controller?
+  def authorize_request
+    header = request.headers['Authorization']
+    header = header.split.last if header
 
-  protected
-
-  def update_allowed_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :bio, :password) }
-    devise_parameter_sanitizer.permit(:account_update) do |u|
-      u.permit(:name, :email, :bio, :password, :current_password)
+    begin
+      @decoded = JsonWebToken.decode(header)
+      @current_user = User.find(@decoded[:user_id])
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { errors: e.message }, status: :unauthorized
     end
   end
 end
