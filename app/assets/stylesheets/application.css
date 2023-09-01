@@ -92,10 +92,6 @@ body {
   margin: 1rem;
 }
 
-.post_text {
-  margin: 0;
-}
-
 .field {
   padding: 0.5rem 0 0.5rem 0;
 }
@@ -152,6 +148,7 @@ body {
 .comments_box {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .comments_for_posts {
@@ -168,10 +165,7 @@ body {
 
 .post_text {
   font-size: larger;
-}
-
-.comments_box {
-  padding: 1rem;
+  margin: 0;
 }
 
 .btn_pag {
