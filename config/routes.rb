@@ -21,13 +21,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  # namespace :api do
-  #   namespace :v1 do
-  #     get '/users/:user_id/posts', to: 'posts#index'
-  #     get '/users/:user_id/posts/:post_id/comments', to: 'comments#index'
-  #     post '/users/:user_id/posts/:post_id/comments', to: 'comments#create'
-  #   end
-  # end
-
 end
