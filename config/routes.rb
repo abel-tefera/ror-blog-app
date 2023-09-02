@@ -8,4 +8,17 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
     end
   end
+
+  #API routes
+  post '/auth/login', to: 'api/authentication#login'
+
+  namespace :api do
+    namespace :v1 do
+      resources :users do
+        resources :posts, only: [:index] do
+          resources :comments, only: [:index, :create]
+        end
+      end
+    end
+  end
 end

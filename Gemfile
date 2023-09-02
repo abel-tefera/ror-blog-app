@@ -82,3 +82,11 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'erb-formatter'
+
+gem 'active_model_serializers', '~> 0.10.13'
+
+gem 'bcrypt', '~> 3.1', '>= 3.1.19'
+
+gem 'jwt'
+
+gem 'bcrypt-ruby'
