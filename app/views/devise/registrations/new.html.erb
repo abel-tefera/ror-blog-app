@@ -16,7 +16,12 @@
 
       <div class="field">
         <%= f.label :bio %><br/>
-        <%= f.text_area :bio, autofocus: true, required: true, rows: 8, cols: 50 %>
+        <%= f.text_area :bio, required: true, rows: 8, cols: 50 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :photo %><br/>
+        <%= f.text_field :photo, autocomplete: "photo" %>
       </div>
 
       <div class="field">

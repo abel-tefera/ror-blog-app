@@ -12,15 +12,24 @@
   </div>
   <% @user.three_recent_posts.each do |post| %>
     <div class="border_solid home_container">
-      <a href="/users/<%= post.author_id%>/posts/<%= post.id %>">
-        <h1><%= post.title %></h1>
-      </a>
+      <div class="post_intro">
+        <a href="/users/<%= post.author_id%>/posts/<%= post.id %>">
+          <h1><%= post.title %></h1>
+        </a>
+        <% if can? :destroy, post %>
+          <%= form_for [@user, post], url: user_post_path(@user, post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do |f| %>
+            <%= f.submit "Delete Post" %>
+          <% end %>
+        <% end %>
+      </div>
       <p class="post_text">
         <%= post.text %>
       </p>
       <div class="likes_box"><p>Comments:
           <%= post.comments_counter %>, Likes:
-          <%= post.likes_counter %></p></div>
+          <%= post.likes_counter %></p>
+      </div>
+
     </div>
   <% end %>
 

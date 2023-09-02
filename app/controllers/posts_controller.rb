@@ -31,8 +31,13 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @user = @post.author
+    @comments = Comment.find_by(post_id: @post.id)
+    @likes = Like.find_by(post_id: @post.id)
 
+    @comments.destroy
+    @likes.destroy
     @post.destroy
+
     redirect_to user_posts_path(@user), notice: 'Post was successfully deleted'
   end
 

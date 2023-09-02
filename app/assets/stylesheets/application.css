@@ -69,7 +69,7 @@ body {
 
 .home_container {
   width: 100%;
-  padding-left: 1rem;
+  padding: 0 1rem 0 1rem;
 }
 
 .profile_container {
@@ -151,6 +151,13 @@ body {
   padding: 1rem;
 }
 
+.post_intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .comments_for_posts {
   padding: 0.5rem;
   margin: 1rem;
@@ -182,7 +189,7 @@ body {
 }
 
 .info_comment {
-  padding-left: 1rem;
+  padding: 1rem;
 }
 
 .show_posts {
